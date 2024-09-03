@@ -27,7 +27,7 @@ export default {
 
 <template>
   <div>
-    <h2 class="text-2xl mb-4">About Blank embedder</h2>
+    <h2 class="text-3xl mb-4">About Blank embedder</h2>
     <input type="text" id="url-target" placeholder="Enter URL here..." class="rounded-xl w-full py-2 px-3 text-gray-700 leading-tight" @keyup.enter="createPage" />
     <div class="button-wrapper mt-4">
       <button id="create" class="bg-blue-500 hover:bg-blue-700 transition duration-300 py-2 px-4 rounded-xl" @click="createPage">Create page</button>

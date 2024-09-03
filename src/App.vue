@@ -13,6 +13,7 @@ import { RouterLink, RouterView } from "vue-router";
           <RouterLink to="/about" class="block w-full mb-2 bg-gray-700 rounded-lg p-2 hover:bg-gray-600 transition-colors">About</RouterLink>
           <RouterLink to="/aboutblank" class="block w-full mb-2 bg-gray-700 rounded-lg p-2 hover:bg-gray-600 transition-colors">About:blank embedder</RouterLink>
           <RouterLink to="/browserinfo" class="block w-full mb-2 bg-gray-700 rounded-lg p-2 hover:bg-gray-600 transition-colors">Browser Info finder</RouterLink>
+          <RouterLink to="/navigatorlist" class="block w-full mb-2 bg-gray-700 rounded-lg p-2 hover:bg-gray-600 transition-colors">Navigator listing</RouterLink>
         </nav>
 
         <h1 class="font-bold mb-2">Made with 💚 by Echo</h1>

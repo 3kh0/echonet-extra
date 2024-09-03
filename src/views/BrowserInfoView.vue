@@ -1,58 +1,57 @@
 <script setup>
-  fetch("https://wtfismyip.com/json")
-    .then((response) => response.json())
-    .then((data) => {
-      document.getElementById("ip-address").textContent = "IP Address: " + data.YourFuckingIPAddress;
-      document.getElementById("location").textContent = "Location: " + data.YourFuckingLocation;
-      document.getElementById("hostname").textContent = "Hostname: " + data.YourFuckingHostname;
-      document.getElementById("isp").textContent = "ISP: " + data.YourFuckingISP;
-      document.getElementById("city").textContent = "City: " + data.YourFuckingCity;
-      document.getElementById("country").textContent = "Country: " + data.YourFuckingCountry;
-      document.getElementById("country-code").textContent = "Country Code: " + data.YourFuckingCountryCode;
-      // Additional fields
-      document.getElementById("current-time").textContent = "Current Time: " + new Date().toLocaleString();
-      document.getElementById("user-agent").textContent = "User Agent: " + navigator.userAgent;
-      document.getElementById("window-width").textContent = "Window Width: " + window.innerWidth + "px";
-      document.getElementById("window-height").textContent = "Window Height: " + window.innerHeight + "px";
-      document.getElementById("window-ratio").textContent = "Window Ratio: " + (window.innerWidth / window.innerHeight).toFixed(2);
-      document.getElementById("screen-width").textContent = "Screen Width: " + window.screen.availWidth + "px";
-      document.getElementById("screen-height").textContent = "Screen Height: " + window.screen.availHeight + "px";
-      document.getElementById("screen-ratio").textContent = "Screen Ratio: " + (window.screen.availWidth / window.screen.availHeight).toFixed(2);
-      document.getElementById("cpu-threads").textContent = "CPU Threads: " + navigator.hardwareConcurrency;
+fetch("https://wtfismyip.com/json")
+  .then((response) => response.json())
+  .then((data) => {
+    const ipAddrElement = document.getElementById("ipAddr");
+    ipAddrElement.innerHTML = `IP Address: ${data.YourFuckingIPAddress}`;
+    
+    const resultElement = document.getElementById("result");
+    const browserInfo = `
+      <p>Location: ${data.YourFuckingLocation}</p>
+      <p>Hostname: ${data.YourFuckingHostname}</p>
+      <p>ISP: ${data.YourFuckingISP}</p>
+      <p>City: ${data.YourFuckingCity}</p>
+      <p>Country: ${data.YourFuckingCountry}</p>
+      <p>Country Code: ${data.YourFuckingCountryCode}</p>
+      <p>Current Time: ${new Date().toLocaleString()}</p>
+      <p>User Agent: ${navigator.userAgent}</p>
+      <p>Window Width: ${window.innerWidth}px</p>
+      <p>Window Height: ${window.innerHeight}px</p>
+      <p>Window Ratio: ${(window.innerWidth / window.innerHeight).toFixed(2)}</p>
+      <p>Screen Width: ${window.screen.availWidth}px</p>
+      <p>Screen Height: ${window.screen.availHeight}px</p>
+      <p>Screen Ratio: ${(window.screen.availWidth / window.screen.availHeight).toFixed(2)}</p>
+      <p>Color Depth: ${window.screen.colorDepth}</p>
+      <p>Do Not Track: ${navigator.doNotTrack === "1" ? "Enabled" : "Disabled"}</p>
+      <p>Global Privacy Control: ${navigator.globalPrivacyControl}</p>
+      <p>Cookies: ${navigator.cookieEnabled}</p>
+      <p>WebGL Enabled: ${!!window.WebGLRenderingContext}</p>
+      <p>Browser Language: ${navigator.language}</p>
+      <p>CPU Threads: ${navigator.hardwareConcurrency}</p>
+    `;
+    resultElement.innerHTML = browserInfo;
 
-      document.getElementById("progress-bar").style.display = "none";
-    });
+    document.getElementById("progress-bar").style.display = "none";
+  });
 </script>
+
 <template>
   <div>
     <h2 class="text-3xl mb-4">Browser Information</h2>
-    <div id="ip-info" class="flex flex-col w-full sm:w-3/4 mx-auto bg-gray-800 p-6 rounded-lg shadow-md relative">
-      <p id="ip-address" class="text-2xl mb-2 font-semibold">Fetching data...</p>
-      <p id="location"></p>
-      <p id="hostname"></p>
-      <p id="isp"></p>
-      <p id="city"></p>
-      <p id="country"></p>
-      <p id="country-code"></p>
-      <p id="user-agent"></p>
-      <p id="current-time"></p>
-      <p id="window-width"></p>
-      <p id="window-height"></p>
-      <p id="window-ratio"></p>
-      <p id="screen-width"></p>
-      <p id="screen-height"></p>
-      <p id="screen-ratio"></p>
-      <p id="cpu-threads"></p>
+    <div id="ip-info" class="bg-gray-800 p-6 rounded-lg shadow-md relative">
+      <p id="ipAddr" class="text-3xl mb-2">Fetching data...</p>
+      <div id="result" class="mb-2"></div>
       <p>Data provided by <a href="https://wtfismyip.com/" class="font-semibold text-blue-500" target="_blank">wtfismyip</a></p>
       <hr class="my-4" />
       <p class="text-sm">
         Use a VPN to protect your privacy online. I recommend <a href="https://mullvad.net/en/vpn" class="font-semibold text-blue-500" target="_blank">Mullvad VPN</a>, it is secure, private, and you don't even use a email to sign up. Pay a
-        flat rate of 5€ per month, no stupid price tiers, or fake promos.
+        flat rate of 5€ per month.
       </p>
       <div id="progress-bar" class="h-1 bg-blue-500 absolute bottom-0 left-0 rounded-lg"></div>
     </div>
   </div>
 </template>
+
 <style scoped>
   :deep(#progress-bar) {
     width: 0%;
