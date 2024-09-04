@@ -39,7 +39,7 @@ fetch("https://wtfismyip.com/json")
   <div>
     <h2 class="text-3xl mb-4">Browser Information</h2>
     <div id="ip-info" class="bg-gray-800 p-6 rounded-lg shadow-md relative">
-      <p id="ipAddr" class="text-3xl mb-2">Fetching data...</p>
+      <p id="ipAddr" class="text-3xl mb-2 font-semibold">Fetching data...</p>
       <div id="result" class="mb-2"></div>
       <p>Data provided by <a href="https://wtfismyip.com/" class="font-semibold text-blue-500" target="_blank">wtfismyip</a></p>
       <hr class="my-4" />
