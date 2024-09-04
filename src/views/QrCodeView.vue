@@ -1,6 +1,6 @@
 <template>
-  <div class="flex">
-    <div class="w-1/2 p-4">
+  <div class="flex flex-wrap">
+    <div class="w-full md:w-1/2 p-4">
       <h2 class="text-3xl mb-4">QR Code Generator</h2>
       <label class="block text-gray-300 text-sm mb-2" for="value">Value:</label>
       <input id="value" type="text" v-model="value" placeholder="Enter text here..." class="rounded-xl w-full py-2 px-3 text-gray-700 leading-tight mb-2" @keyup="generateQrCode" />
@@ -25,10 +25,10 @@
         </div>
       </div>
       <label class="block text-gray-300 text-sm mb-2">Render:</label>
-  <div class="flex justify-between space-x-4 mb-2">
-    <button :class="`flex-1 rounded-xl py-2 px-4 ${renderAs === 'svg' ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'}`" @click="setRenderAs('svg')">Render as SVG</button>
-    <button :class="`flex-1 rounded-xl py-2 px-4 ${renderAs === 'canvas' ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'}`" @click="setRenderAs('canvas')">Render with HTML Canvas</button>
-  </div>
+      <div class="flex justify-between space-x-4 mb-2">
+        <button :class="`flex-1 rounded-xl py-2 px-4 ${renderAs === 'svg' ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'}`" @click="setRenderAs('svg')">Render as SVG</button>
+        <button :class="`flex-1 rounded-xl py-2 px-4 ${renderAs === 'canvas' ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'}`" @click="setRenderAs('canvas')">Render with Canvas</button>
+      </div>
       <label class="block text-gray-300 text-sm mb-2" for="level">Error Correction Level:</label>
       <select id="level" v-model="level" class="rounded-xl w-full py-2 px-3 text-gray-700 leading-tight mb-2">
         <option value="L">Level L (Low)</option>
@@ -45,32 +45,32 @@
         <p class="py-2">Powered by <a href="https://github.com/scopewu/qrcode.vue" class="italic underline">scopewu/qrcode.vue</a></p>
       </div>
     </div>
-    <div class="w-1/2 p-4 flex items-center justify-center">
-    <div v-if="qrCode" class="mt-4">
-      <qrcode-vue :value="qrCode" :size="size" :render-as="renderAs" :margin="margin" :level="level" :background="background" :foreground="foreground" />
+    <div class="w-full md:w-1/2 p-4 flex items-center justify-center">
+      <div v-if="qrCode" class="mt-4 max-w-full overflow-hidden">
+        <qrcode-vue :value="qrCode" :size="size" :render-as="renderAs" :margin="margin" :level="level" :background="background" :foreground="foreground" class="max-w-full" />
+      </div>
     </div>
-  </div>
   </div>
 </template>
 
 <script>
-import QrcodeVue from 'qrcode.vue'
+import QrcodeVue from "qrcode.vue";
 
 export default {
   components: {
-    QrcodeVue,
+    QrcodeVue
   },
   data() {
     return {
-      value: 'https://example.com',
+      value: "https://example.com",
       qrCode: null,
       size: 500,
-      renderAs: 'svg',
+      renderAs: "svg",
       margin: 1,
-      level: 'H',
-      background: '#ffffff',
-      foreground: '#000000',
-    }
+      level: "H",
+      background: "#ffffff",
+      foreground: "#000000"
+    };
   },
   methods: {
     generateQrCode() {
@@ -78,10 +78,10 @@ export default {
     },
     setRenderAs(value) {
       this.renderAs = value;
-    },
+    }
   },
   mounted() {
     this.generateQrCode();
-  },
-}
+  }
+};
 </script>

@@ -4,7 +4,7 @@ fetch("https://wtfismyip.com/json")
   .then((data) => {
     const ipAddrElement = document.getElementById("ipAddr");
     ipAddrElement.innerHTML = `IP Address: ${data.YourFuckingIPAddress}`;
-    
+
     const resultElement = document.getElementById("result");
     const browserInfo = `
       <p>Location: ${data.YourFuckingLocation}</p>
@@ -43,31 +43,28 @@ fetch("https://wtfismyip.com/json")
       <div id="result" class="mb-2"></div>
       <p>Data provided by <a href="https://wtfismyip.com/" class="font-semibold text-blue-500" target="_blank">wtfismyip</a></p>
       <hr class="my-4" />
-      <p class="text-sm">
-        Use a VPN to protect your privacy online. I recommend <a href="https://mullvad.net/en/vpn" class="font-semibold text-blue-500" target="_blank">Mullvad VPN</a>, it is secure, private, and you don't even use a email to sign up. Pay a
-        flat rate of 5€ per month.
-      </p>
+      <p class="text-sm">Use a VPN to protect your privacy online. I recommend <a href="https://mullvad.net/en/vpn" class="font-semibold text-blue-500" target="_blank">Mullvad VPN</a>, it is secure, private, and you don't even use a email to sign up. Pay a flat rate of 5€ per month.</p>
       <div id="progress-bar" class="h-1 bg-blue-500 absolute bottom-0 left-0 rounded-lg"></div>
     </div>
   </div>
 </template>
 
 <style scoped>
-  :deep(#progress-bar) {
-    width: 0%;
-    transition: width 0.5s ease;
-    animation: progress 4s infinite;
-  }
+:deep(#progress-bar) {
+  width: 0%;
+  transition: width 0.5s ease;
+  animation: progress 4s infinite;
+}
 
-  @keyframes progress {
-    0% {
-      width: 0;
-    }
-    50% {
-      width: 100%;
-    }
-    100% {
-      width: 0;
-    }
+@keyframes progress {
+  0% {
+    width: 0;
   }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
 </style>
