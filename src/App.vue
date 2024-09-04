@@ -28,7 +28,7 @@ const now = new Date().toISOString().slice(0, 19).replace("T", " ");
 
 <template>
   <div class="bg-[#000011] text-white flex flex-col md:flex-row rounded-lg overflow-hidden">
-    <header class="flex flex-col items-center md:flex-0 w-[230px] p-2 m-4 bg-gray-900 rounded-lg">
+    <header class="flex flex-col items-center md:flex-0 w-[230px] min-w-[230px] p-2 m-4 bg-gray-900 rounded-lg">
       <div class="wrapper text-center w-full">
         <h1 class="text-2xl font-bold mb-2">Echo net extras</h1>
 

@@ -63,7 +63,7 @@ onMounted(() => {
   <div>
     <h2 class="text-3xl mb-4">Navigator Object</h2>
     <div class="bg-gray-800 p-6 rounded-lg shadow-md relative">
-      <pre id="result" class="mb-2 font-mono text-sm">Fetching data...</pre>
+      <pre id="result" class="font-mono text-sm">Fetching data...</pre>
     </div>
   </div>
 </template>
