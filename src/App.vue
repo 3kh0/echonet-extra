@@ -10,7 +10,8 @@ const routes = ref([
   { name: "Navigator Object", path: "/navigatorlist" },
   { name: "QR Code Maker", path: "/qrcode" },
   { name: "User Agent Info", path: "/useragent" },
-  { name: "Echo's Crypto wallets", path: "/crypto" }
+  { name: "Echo's Crypto wallets", path: "/crypto" },
+  { name: "Pomodoro Timer", path: "/pomodorotimer" }
 ]);
 
 routes.value.sort((a, b) => a.name.localeCompare(b.name));
