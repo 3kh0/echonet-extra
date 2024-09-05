@@ -1,6 +1,6 @@
 <template>
-  <main class="p-6 min-h-screen">
-    <h1 class="text-3xl font-bold mb-6 text-center">Crypto Wallets</h1>
+  <main>
+    <h1 class="text-3xl font-bold mb-4">Crypto Wallets</h1>
     <div v-for="wallet in wallets" :key="wallet.name" class="wallet bg-gray-800 p-4 rounded-lg shadow-md mb-6">
       <h2 class="text-2xl font-semibold mb-2 flex items-center">
         <img :src="`/svg/${wallet.symbol}.svg`" alt="" class="w-6 h-6 mr-2" />

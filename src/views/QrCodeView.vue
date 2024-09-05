@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-wrap">
-    <div class="w-full md:w-1/2 p-4">
+    <div class="w-full md:w-1/2">
       <h2 class="text-3xl mb-4">QR Code Generator</h2>
       <label class="block text-gray-300 text-sm mb-2" for="value">Value:</label>
       <input id="value" type="text" v-model="value" placeholder="Enter text here..." class="rounded-xl w-full py-2 px-3 text-gray-700 leading-tight mb-2" @keyup="generateQrCode" />
