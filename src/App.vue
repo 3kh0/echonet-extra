@@ -11,7 +11,10 @@ const routes = ref([
   { name: "QR Code Maker", path: "/qrcode" },
   { name: "User Agent Info", path: "/useragent" },
   { name: "Echo's Crypto wallets", path: "/crypto" },
-  { name: "Pomodoro Timer", path: "/pomodorotimer" }
+  { name: "Pomodoro Timer", path: "/pomodorotimer" },
+  { name: "Fursona Reference", path: "/fursona" },
+  { name: "Number Generator", path: "/randomnumber" },
+  { name: "Password Generator", path: "/randompassword" }
 ]);
 
 routes.value.sort((a, b) => a.name.localeCompare(b.name));
