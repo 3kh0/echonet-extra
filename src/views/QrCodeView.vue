@@ -37,7 +37,7 @@
         <option value="H">Level H (High)</option>
       </select>
       <div class="button-wrapper mt-4">
-        <button class="bg-blue-500 hover:bg-blue-700 transition duration-300 py-2 px-4 rounded-xl" @click="generateQrCode">Generate QR Code</button>
+        <button class="bg-blue-500 hover:bg-blue-700 transition-colors py-2 px-4 rounded-xl" @click="generateQrCode">Generate QR Code</button>
       </div>
       <div class="tip-section mt-6 bg-gray-800 p-4 rounded-lg" role="note">
         <p class="py-2">You can use this tool to generate QR codes for URLs, text, or any other data you want to encode.</p>

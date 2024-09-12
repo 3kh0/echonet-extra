@@ -31,7 +31,7 @@ const now = new Date().toISOString().slice(0, 19).replace("T", " ");
 </script>
 
 <template>
-  <div class="bg-[#000011] text-white flex flex-col md:flex-row rounded-lg overflow-hidden">
+  <div class="bg-[#000011] text-white flex flex-col md:flex-row overflow-hidden h-dvh">
     <header class="flex flex-col items-center md:flex-0 w-[230px] min-w-[230px] p-2 m-4 bg-gray-900 rounded-lg">
       <div class="wrapper text-center w-full">
         <h1 class="text-2xl font-bold mb-2">Echo net extras</h1>
@@ -52,6 +52,6 @@ const now = new Date().toISOString().slice(0, 19).replace("T", " ");
         <h1 class="text-sm italic">Generated at {{ now }}</h1>
       </div>
     </header>
-    <RouterView class="flex-grow w-4/5 p-2 m-4 ml-0 bg-gray-900 rounded-lg" />
+    <RouterView class="flex-grow p-2 m-4 ml-0 bg-gray-900 rounded-lg overflow-auto" />
   </div>
 </template>

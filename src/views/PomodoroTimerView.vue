@@ -4,9 +4,9 @@
     <p class="text-8xl font-mono mb-8">{{ minutes }}:{{ seconds < 10 ? "0" + seconds : seconds }}</p>
     <p class="text-2xl font-bold mb-8">{{ timerType }}</p>
     <div class="flex space-x-4">
-      <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700" @click="startTimer">Start</button>
-      <button class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-700" @click="resetTimer">Reset</button>
-      <button class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-700" @click="skipTimer">Skip</button>
+      <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition-colors" @click="startTimer">Start</button>
+      <button class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-700 transition-colors" @click="resetTimer">Reset</button>
+      <button class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-700 transition-colors" @click="skipTimer">Skip</button>
     </div>
   </div>
 </template>

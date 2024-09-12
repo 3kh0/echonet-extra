@@ -30,8 +30,8 @@ export default {
     <h2 class="text-3xl mb-4">About Blank embedder</h2>
     <input type="text" id="url-target" placeholder="Enter URL here..." class="rounded-xl w-full py-2 px-3 text-gray-700 leading-tight" @keyup.enter="createPage" />
     <div class="button-wrapper mt-4">
-      <button id="create" class="bg-blue-500 hover:bg-blue-700 transition duration-300 py-2 px-4 rounded-xl" @click="createPage">Create page</button>
-      <button class="bg-red-500 hover:bg-red-700 transition duration-300 py-2 px-4 rounded-xl ml-4" @click="document.getElementById('url-target').value = ''">Clear input</button>
+      <button id="create" class="bg-blue-500 hover:bg-blue-700 transition-colors py-2 px-4 rounded-xl" @click="createPage">Create page</button>
+      <button class="bg-red-500 hover:bg-red-700 transition-colors py-2 px-4 rounded-xl ml-4" @click="document.getElementById('url-target').value = ''">Clear input</button>
     </div>
     <div class="tip-section mt-6 bg-gray-800 p-4 rounded-lg" role="note">
       <p>Info: For extra security, put this page in the embedder so extensions can not see you using this tool. This tool does not always unblock pages, it just makes it so extensions can not interfere with them. Some pages will not work due to Content Security Policies, <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-src" class="text-white underline">Learn more here</a>.</p>
