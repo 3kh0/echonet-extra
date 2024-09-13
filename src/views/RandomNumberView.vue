@@ -23,7 +23,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref } from "vue";
 
 const min = ref(0);
 const max = ref(100);
@@ -31,13 +31,9 @@ const randomNumber = ref(null);
 
 const generateRandomNumber = () => {
   if (min.value > max.value) {
-    alert('Minimum value cannot be greater than maximum value.');
+    alert("Minimum value cannot be greater than maximum value.");
     return;
   }
   randomNumber.value = Math.floor(Math.random() * (max.value - min.value + 1)) + min.value;
 };
 </script>
-
-<style scoped>
-/* Add any additional styles if needed */
-</style>

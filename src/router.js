@@ -3,15 +3,24 @@ import { createRouter, createWebHistory } from "vue-router";
 const views = import.meta.glob("./views/*.vue");
 
 const makeRoutes = () => {
-  return Object.keys(views).map((path) => {
+  const routes = Object.keys(views).map((path) => {
     const route = path.match(/\.\/views\/(.*)\.vue$/)[1];
     const fixRoute = route.replace("View", "");
     return {
       path: fixRoute === "Home" ? "/" : `/${fixRoute.toLowerCase()}`,
-      route: fixRoute.toLowerCase(),
+      name: fixRoute.toLowerCase(),
       component: views[path]
     };
   });
+
+  // Add catch-all route
+  routes.push({
+    path: '/:pathMatch(.*)*',
+    name: 'notfound',
+    component: views['./views/NotFoundView.vue']
+  });
+
+  return routes;
 };
 
 const router = createRouter({
