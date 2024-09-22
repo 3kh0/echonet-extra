@@ -1,8 +1,9 @@
 <script setup>
-import { ref, computed } from "vue";
+import { ref, onMounted, computed } from "vue";
 import { RouterLink, RouterView } from "vue-router";
 
 const searchTerm = ref("");
+const searchBox = ref(null);
 const routes = ref([
   { name: "About this", path: "/" },
   { name: "About:blank embedder", path: "/aboutblank" },
@@ -28,15 +29,28 @@ const nonMatchingTools = computed(() => {
 });
 
 const now = new Date().toISOString().slice(0, 19).replace("T", " ");
+
+const focusSearch = () => {
+  searchBox.value.focus();
+};
+
+onMounted(() => {
+  document.addEventListener("keydown", (event) => {
+    if (event.ctrlKey && event.key === "k") {
+      event.preventDefault();
+      focusSearch();
+    }
+  });
+});
 </script>
 
 <template>
-  <div class="bg-[#000011] text-white flex flex-col md:flex-row overflow-hidden h-dvh">
-    <header class="flex flex-col items-center md:flex-0 w-[230px] min-w-[230px] p-2 m-4 bg-gray-900 rounded-lg">
+  <div class="bg-[#000011] text-white flex flex-col md:flex-row overflow-hidden h-dvh" @keydown.ctrl.k="focusSearch">
+    <header class="flex flex-col items-center md:flex-0 w-[230px] min-w-[230px] p-2 m-4 bg-gray-900 rounded-lg overflow-y-auto hide-scrollbar">
       <div class="wrapper text-center w-full">
         <h1 class="text-2xl font-bold mb-2">Echo net extras</h1>
 
-        <input type="text" v-model="searchTerm" placeholder="Search tools..." class="w-full p-2 rounded-lg text-black" />
+        <input ref="searchBox" type="text" v-model="searchTerm" autofocus placeholder="Search tools... CTRL+K" class="w-full p-2 rounded-lg text-black" />
 
         <nav class="mt-2 w-full">
           <div v-if="matchingTools.length === 0" class="text-center text-red-500">Your query did not match any results! :(</div>
@@ -52,6 +66,16 @@ const now = new Date().toISOString().slice(0, 19).replace("T", " ");
         <h1 class="text-sm italic">Generated at {{ now }}</h1>
       </div>
     </header>
-    <RouterView class="flex-grow p-2 m-4 ml-0 bg-gray-900 rounded-lg overflow-auto" />
+    <RouterView class="flex-grow p-2 m-4 ml-0 bg-gray-900 rounded-lg overflow-auto hide-scrollbar" />
   </div>
 </template>
+<style scoped>
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+</style>
