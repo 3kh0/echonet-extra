@@ -3,6 +3,7 @@ import { ref, onMounted, computed } from "vue";
 import { RouterLink, RouterView } from "vue-router";
 
 const searchTerm = ref("");
+const showMenu = ref(false);
 const searchBox = ref(null);
 const routes = ref([
   { name: "About this", path: "/" },
@@ -34,6 +35,10 @@ const focusSearch = () => {
   searchBox.value.focus();
 };
 
+const toggleMenu = () => {
+  showMenu.value = !showMenu.value;
+};
+
 onMounted(() => {
   document.addEventListener("keydown", (event) => {
     if (event.ctrlKey && event.key === "k") {
@@ -46,27 +51,29 @@ onMounted(() => {
 
 <template>
   <div class="bg-[#000011] text-white flex flex-col md:flex-row overflow-hidden h-dvh" @keydown.ctrl.k="focusSearch">
-    <header class="flex flex-col items-center md:flex-0 w-[230px] min-w-[230px] p-2 m-4 bg-gray-900 rounded-lg overflow-y-auto hide-scrollbar">
+    <div class="md:hidden flex justify-between items-center p-2 m-4 mb-0 bg-gray-900 rounded-lg">
+      <h1 class="text-2xl font-bold">Echo net extras</h1>
+      <img src="/svg/menu.svg" alt="Menu" @click="showMenu = !showMenu" class="cursor-pointer w-8 h-8" />
+    </div>
+    <header :class="{ 'hidden md:flex': !showMenu, 'flex-grow md:hidden sm:w-64': showMenu }" class="flex-col items-center md:w-[230px] min-w-[230px] p-2 m-4 bg-gray-900 rounded-lg overflow-y-auto hide-scrollbar">
       <div class="wrapper text-center w-full">
         <h1 class="text-2xl font-bold mb-2">Echo net extras</h1>
-
         <input ref="searchBox" type="text" v-model="searchTerm" autofocus placeholder="Search tools... CTRL+K" class="w-full p-2 rounded-lg text-black" />
-
         <nav class="mt-2 w-full">
           <div v-if="matchingTools.length === 0" class="text-center text-red-500">Your query did not match any results! :(</div>
           <div v-for="tool in matchingTools" :key="tool.path">
-            <RouterLink :to="tool.path" class="block w-full mb-2 bg-gray-700 rounded-lg p-2 hover:bg-gray-600 transition-colors">{{ tool.name }}</RouterLink>
+            <RouterLink :to="tool.path" class="block w-full mb-2 bg-gray-700 rounded-lg p-2 hover:bg-gray-600 transition-colors" @click="showMenu = false">{{ tool.name }}</RouterLink>
           </div>
           <hr class="my-4" />
           <div v-for="tool in nonMatchingTools" :key="tool.path">
-            <RouterLink :to="tool.path" class="block w-full mb-2 bg-gray-800 text-gray-500 rounded-lg p-2 hover:bg-gray-500 transition-colors">{{ tool.name }}</RouterLink>
+            <RouterLink :to="tool.path" class="block w-full mb-2 bg-gray-800 text-gray-500 rounded-lg p-2 hover:bg-gray-500 transition-colors" @click="showMenu = false">{{ tool.name }}</RouterLink>
           </div>
         </nav>
         <h1 class="font-bold mb-2">Made with 💚 by Echo</h1>
         <h1 class="text-sm italic">Generated at {{ now }}</h1>
       </div>
     </header>
-    <RouterView class="flex-grow p-2 m-4 ml-0 bg-gray-900 rounded-lg overflow-auto hide-scrollbar" />
+    <RouterView v-if="!showMenu" class="flex-grow p-2 m-4 md:ml-0 bg-gray-900 rounded-lg overflow-auto hide-scrollbar" />
   </div>
 </template>
 <style scoped>

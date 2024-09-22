@@ -17,6 +17,9 @@ importers:
       vue-router:
         specifier: ^4.4.5
         version: 4.4.5(vue@3.5.8)
+      vue-screen:
+        specifier: ^2.4.0
+        version: 2.4.0(vue@3.5.8)
     devDependencies:
       '@rushstack/eslint-patch':
         specifier: ^1.10.4
@@ -1752,6 +1755,11 @@ packages:
     resolution: {integrity: sha512-4fKZygS8cH1yCyuabAXGUAsyi1b2/o/OKgu/RUb+znIYOxPRxdkytJEx+0wGcpBE1pX6vUgh5jwWOKRGvuA/7Q==}
     peerDependencies:
       vue: ^3.2.0
+
+  vue-screen@2.4.0:
+    resolution: {integrity: sha512-yvhpd2p9de+yOFjbO7bEKp1m3Yyrd7ag9gIXULKkJFOpuP8LnjIYbfJjTe9KGJxJdgVpYT3q0D8lacUlMvGc8g==}
+    peerDependencies:
+      vue: ^3.0.0
 
   vue@3.5.8:
     resolution: {integrity: sha512-hvuvuCy51nP/1fSRvrrIqTLSvrSyz2Pq+KQ8S8SXCxTWVE0nMaOnSDnSOxV1eYmGfvK7mqiwvd1C59CEEz7dAQ==}
@@ -3513,6 +3521,10 @@ snapshots:
   vue-router@4.4.5(vue@3.5.8):
     dependencies:
       '@vue/devtools-api': 6.6.4
+      vue: 3.5.8
+
+  vue-screen@2.4.0(vue@3.5.8):
+    dependencies:
       vue: 3.5.8
 
   vue@3.5.8:
