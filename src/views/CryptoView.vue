@@ -26,7 +26,7 @@
           <img src="/svg/qr.svg" alt="Get QR Code" class="w-6 h-6" />
         </button>
         <button @click="viewOnBlockExplorer(wallet.symbol, wallet.address)" class="bg-yellow-500 transition-colors text-white px-4 py-2 rounded hover:bg-yellow-600">
-          <p class="flex items-center"><img src="/svg/open.svg" alt="Get QR Code" class="w-6 h-6 mr-2" /> Block Explorer</p>
+          <p class="flex items-center"><img src="/svg/open.svg" alt="Get QR Code" class="w-6 h-6 mr-2" /> Explorer</p>
         </button>
       </div>
       <div v-if="qrCode && currentAddress === wallet.address" class="mt-4 max-w-full overflow-hidden">
@@ -41,7 +41,7 @@ import { ref } from "vue";
 import QrcodeVue from "qrcode.vue";
 
 const wallets = ref([
-  { name: "Monero", symbol: "xmr", address: "43LSJpZ6Le84eMiLTmMwZgTDMxtPthDh8C dk1HWuLAx9itTgj8YqLbGE7hFYXSR6p6YVP 8g4TMWxDiQTDnHW1VHMAb6YDrH" },
+  { name: "Monero", symbol: "xmr", address: "43LSJpZ6Le84eMiLTmMwZgTDMxtPthDh8Cdk1HWuLAx9itTgj8YqLbGE7hFYXSR6p6YVP8g4TMWxDiQTDnHW1VHMAb6YDrH" },
   { name: "Ethereum", symbol: "eth", address: "0x4a31EBD5A93334ba99CAE15dd1411c7a3E0214B6" },
   { name: "Litecoin", symbol: "ltc", address: "ltc1q4nwfd39gwgh57ylj0qlwahnfjnl3v5anrdjtex" },
   { name: "Bitcoin", symbol: "btc", address: "33WimAtvLLmEREJBUS2wc8ev7tjmzCU2Mq" },

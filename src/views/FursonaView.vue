@@ -1,5 +1,9 @@
 <template>
   <main>
+    <!-- not completed banner -->
+    <div class="bg-red-500 text-white p-2 mb-2 rounded-lg">
+      <p class="text-lg">This page is still being worked on, so the content might not be complete yet</p>
+    </div>
     <h1 class="text-3xl mb-4">Fursona Reference</h1>
     <p>Echo is an orange fox who usually wears a sweatshirt with the occasional T-shirt. Common designs include the <a class="font-semibold text-blue-500" target="_blank" href="https://web.getmonero.org/press-kit/">Monero logo</a> and the <a class="font-semibold text-blue-500" target="_blank" href="https://efimero.github.io/xenia-images/cathodegaytube1.jpg">Xenia Linux T-shirt</a>. Here are a few pointers for the fine details:</p>
     <ul class="p-4">
