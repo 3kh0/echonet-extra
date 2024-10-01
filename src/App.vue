@@ -15,7 +15,9 @@ const routes = ref([
   { name: "Pomodoro Timer", path: "/pomodorotimer" },
   { name: "Fursona Reference", path: "/fursona" },
   { name: "Number Generator", path: "/randomnumber" },
-  { name: "Password Generator", path: "/randompassword" }
+  { name: "Password Generator", path: "/randompassword" },
+  { name: "URL Opener", path: "/urlopen" },
+  { name: "Coin flip", path: "/coinflip" }
 ]);
 
 routes.value.sort((a, b) => a.name.localeCompare(b.name));
@@ -64,7 +66,7 @@ onMounted(() => {
             <RouterLink :to="tool.path" class="block w-full mb-2 bg-gray-800 text-gray-500 rounded-lg p-2 hover:bg-gray-500 transition-colors" @click="showMenu = false">{{ tool.name }}</RouterLink>
           </div>
         </nav>
-        <h1 class="font-bold mb-2">Made with 💚 by Echo</h1>
+        <h1 class="font-bold mb-2">Made with <img class="h-5 w-5 inline" src="/svg/greenheart.svg" /> by Echo</h1>
         <h1 class="text-sm italic">Generated at {{ now }}</h1>
       </div>
     </header>
