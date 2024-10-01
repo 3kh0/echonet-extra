@@ -9,7 +9,6 @@ const routes = ref([
   { name: "About this", path: "/" },
   { name: "About:blank embedder", path: "/aboutblank" },
   { name: "Browser Info finder", path: "/browserinfo" },
-  { name: "Navigator Object", path: "/navigatorlist" },
   { name: "QR Code Maker", path: "/qrcode" },
   { name: "User Agent Info", path: "/useragent" },
   { name: "Echo's Crypto wallets", path: "/crypto" },
@@ -33,10 +32,6 @@ const now = new Date().toISOString().slice(0, 19).replace("T", " ");
 
 const focusSearch = () => {
   searchBox.value.focus();
-};
-
-const toggleMenu = () => {
-  showMenu.value = !showMenu.value;
 };
 
 onMounted(() => {

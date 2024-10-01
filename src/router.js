@@ -15,9 +15,9 @@ const makeRoutes = () => {
 
   // Add catch-all route
   routes.push({
-    path: '/:pathMatch(.*)*',
-    name: 'notfound',
-    component: views['./views/NotFoundView.vue']
+    path: "/:pathMatch(.*)*",
+    name: "notfound",
+    component: views["./views/NotFoundView.vue"]
   });
 
   return routes;
