@@ -17,7 +17,8 @@ const routes = ref([
   { name: "Number Generator", path: "/randomnumber" },
   { name: "Password Generator", path: "/randompassword" },
   { name: "URL Opener", path: "/urlopen" },
-  { name: "Coin flip", path: "/coinflip" }
+  { name: "Coin flip", path: "/coinflip" },
+  { name: "Countdown Timer", path: "/timer" }
 ]);
 
 routes.value.sort((a, b) => a.name.localeCompare(b.name));
