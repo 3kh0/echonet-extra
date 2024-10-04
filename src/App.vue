@@ -104,7 +104,7 @@ onMounted(() => {
             <RouterLink :to="tool.path" class="block w-full mb-2 bg-gray-800 text-gray-500 rounded-lg p-2 hover:bg-gray-500 transition-colors" @click="showMenu = false">{{ tool.name }}</RouterLink>
           </div>
         </nav>
-        <h1 class="font-bold mb-2">Made with <img class="h-5 w-5 inline" src="/svg/greenheart.svg" /> by Echo</h1>
+        <h1 class="font-bold mb-2">Made with <img class="h-5 w-5 inline" alt="green heart" src="/svg/greenheart.svg" /> by Echo</h1>
         <h1 class="text-sm italic">Generated at {{ now }}</h1>
       </div>
     </header>
