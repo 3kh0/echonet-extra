@@ -37,6 +37,36 @@ const focusSearch = () => {
   searchBox.value.focus();
 };
 
+const showConsentPopup = ref(false);
+const consentGiven = ref(false);
+
+const handleConsent = () => {
+  localStorage.setItem("analytics-consent", "true");
+  showConsentPopup.value = false;
+  consentGiven.value = true;
+  injectDataScript();
+  setTimeout(() => {
+    consentGiven.value = false;
+  }, 5000);
+};
+
+const handleDecline = () => {
+  localStorage.setItem("analytics-consent", "false");
+  showConsentPopup.value = false;
+  consentGiven.value = true;
+  setTimeout(() => {
+    consentGiven.value = false;
+  }, 5000);
+};
+
+const injectDataScript = () => {
+  const script = document.createElement("script");
+  script.src = "https://data.3kh0.net/script.js";
+  script.defer = true;
+  script.setAttribute("data-website-id", "3284c22d-b7ff-41dc-a622-f2d95899ee07");
+  document.head.appendChild(script);
+};
+
 onMounted(() => {
   document.addEventListener("keydown", (event) => {
     if (event.ctrlKey && event.key === "k") {
@@ -44,6 +74,13 @@ onMounted(() => {
       focusSearch();
     }
   });
+
+  const consent = localStorage.getItem("analytics-consent");
+  if (!consent) {
+    showConsentPopup.value = true;
+  } else if (consent === "true") {
+    injectDataScript();
+  }
 });
 </script>
 
@@ -71,9 +108,24 @@ onMounted(() => {
         <h1 class="text-sm italic">Generated at {{ now }}</h1>
       </div>
     </header>
-    <RouterView v-if="!showMenu" class="flex-grow p-2 m-4 md:ml-0 bg-gray-900 rounded-lg overflow-auto hide-scrollbar" />
+    <div class="flex-grow flex flex-col">
+      <RouterView v-if="!showMenu" class="flex-grow p-2 m-4 md:ml-0 bg-gray-900 rounded-lg overflow-auto hide-scrollbar" />
+      <div v-if="showConsentPopup" class="bg-gray-600 text-white p-2 m-4 mt-0 md:m-0 md:mr-4 md:mb-4 flex flex-col lg:flex-row lg:items-start rounded-lg">
+        <span class="p-2 flex-grow"><b class="bg-gray-400 p-1 rounded-lg">Consent to analytics</b> I would like to use javascript to collect analytics. I will only collect data with your express consent. If you do not click "Consent", no data will be collected and your experience will not be affected in any way. If you would like to learn more about what is collected, please see the <a href="https://3kh0.net/privacy" target="_blank" class="underline">privacy page</a>.</span>
+        <div class="flex flex-col md:flex-col md:items-end gap-1 mt-2 lg:mt-0 lg:ml-2">
+          <div class="flex flex-row w-full lg:flex-col lg:w-auto gap-1">
+            <button @click="handleConsent" class="bg-blue-500 text-white p-2 rounded-lg flex-1 lg:flex-none lg:w-full">Consent</button>
+            <button @click="handleDecline" class="bg-blue-500 text-white p-2 rounded-lg flex-1 lg:flex-none lg:w-full">Decline</button>
+          </div>
+        </div>
+      </div>
+      <div v-if="consentGiven" class="bg-green-600 text-white p-2 mr-4 mb-4 flex justify-between items-center rounded-lg">
+        <span class="p-2">Your preference has been saved and will be honored. If you would like to reset it, just clear the site data. This notice will close in 5 seconds...</span>
+      </div>
+    </div>
   </div>
 </template>
+
 <style scoped>
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
