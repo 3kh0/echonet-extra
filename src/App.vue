@@ -109,7 +109,9 @@ onMounted(() => {
       </div>
     </header>
     <div class="flex-grow flex flex-col">
-      <RouterView v-if="!showMenu" class="flex-grow p-2 m-4 md:ml-0 bg-gray-900 rounded-lg overflow-auto hide-scrollbar" />
+      <div class="flex-grow p-2 m-4 md:ml-0 bg-gray-900 rounded-lg overflow-auto hide-scrollbar" style="min-height: 400px;">
+        <RouterView />
+      </div>
       <div v-if="showConsentPopup" class="bg-gray-600 text-white p-2 m-4 mt-0 md:m-0 md:mr-4 md:mb-4 flex flex-col lg:flex-row lg:items-start rounded-lg">
         <span class="p-2 flex-grow"><b class="bg-gray-400 p-1 rounded-lg">Consent to analytics</b> I would like to use javascript to collect analytics. I will only collect data with your express consent. If you do not click "Consent", no data will be collected and your experience will not be affected in any way. If you would like to learn more about what is collected, please see the <a href="https://3kh0.net/privacy" target="_blank" class="underline">privacy page</a>.</span>
         <div class="flex flex-col md:flex-col md:items-end gap-1 mt-2 lg:mt-0 lg:ml-2">
