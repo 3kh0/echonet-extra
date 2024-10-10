@@ -85,7 +85,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="bg-[#000011] text-white flex flex-col md:flex-row overflow-hidden h-dvh" @keydown.ctrl.k="focusSearch">
+  <div class="bg-[#000011] text-white flex flex-col h-screen">
     <div class="md:hidden flex justify-between items-center p-2 m-4 mb-0 bg-gray-900 rounded-lg">
       <h1 class="text-2xl font-bold">Echo net extras</h1>
       <img src="/svg/menu.svg" alt="Menu" @click="showMenu = !showMenu" class="cursor-pointer w-8 h-8" />
@@ -108,9 +108,9 @@ onMounted(() => {
         <h1 class="text-sm italic">Generated at {{ now }}</h1>
       </div>
     </header>
-    <div class="flex-grow flex flex-col">
-      <div class="flex-grow p-2 m-4 md:ml-0 bg-gray-900 rounded-lg overflow-auto hide-scrollbar" style="min-height: 400px;">
-        <RouterView />
+    <div class="flex-grow flex flex-col overflow-hidden">
+      <div v-if="!showMenu" class="flex-grow p-2 m-4 md:ml-0 bg-gray-900 rounded-lg overflow-auto hide-scrollbar">
+        <RouterView class="h-full overflow-auto hide-scrollbar" />
       </div>
       <div v-if="showConsentPopup" class="bg-gray-600 text-white p-2 m-4 mt-0 md:m-0 md:mr-4 md:mb-4 flex flex-col lg:flex-row lg:items-start rounded-lg">
         <span class="p-2 flex-grow"><b class="bg-gray-400 p-1 rounded-lg">Consent to analytics</b> I would like to use javascript to collect analytics. I will only collect data with your express consent. If you do not click "Consent", no data will be collected and your experience will not be affected in any way. If you would like to learn more about what is collected, please see the <a href="https://3kh0.net/privacy" target="_blank" class="underline">privacy page</a>.</span>
@@ -121,7 +121,7 @@ onMounted(() => {
           </div>
         </div>
       </div>
-      <div v-if="consentGiven" class="bg-green-600 text-white p-2 mr-4 mb-4 flex justify-between items-center rounded-lg">
+      <div v-if="consentGiven" class="bg-green-600 text-white p-2 ml-4 sm:ml-0 mr-4 mb-4 flex justify-between items-center rounded-lg">
         <span class="p-2">Your preference has been saved and will be honored. If you would like to reset it, just clear the site data. This notice will close in 5 seconds...</span>
       </div>
     </div>
