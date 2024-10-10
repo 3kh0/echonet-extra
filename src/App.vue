@@ -85,12 +85,12 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="bg-[#000011] text-white flex flex-col h-screen">
+  <div class="bg-[#000011] text-white flex flex-col md:flex-row overflow-hidden h-screen" @keydown.ctrl.k="focusSearch">
     <div class="md:hidden flex justify-between items-center p-2 m-4 mb-0 bg-gray-900 rounded-lg">
       <h1 class="text-2xl font-bold">Echo net extras</h1>
       <img src="/svg/menu.svg" alt="Menu" @click="showMenu = !showMenu" class="cursor-pointer w-8 h-8" />
     </div>
-    <header :class="{ 'hidden md:flex': !showMenu, 'flex-grow md:hidden sm:w-64': showMenu }" class="flex-col items-center md:w-[230px] min-w-[230px] p-2 m-4 bg-gray-900 rounded-lg overflow-y-auto hide-scrollbar">
+    <header :class="{ 'hidden md:flex': !showMenu, 'flex-grow md:hidden md:w-64': showMenu }" class="flex-col items-center md:w-[230px] min-w-[230px] p-2 m-4 bg-gray-900 rounded-lg overflow-y-auto hide-scrollbar">
       <div class="wrapper text-center w-full">
         <h1 class="text-2xl font-bold mb-2">Echo net extras</h1>
         <input ref="searchBox" type="text" v-model="searchTerm" autofocus placeholder="Search tools... CTRL+K" class="w-full p-2 rounded-lg text-black" />
@@ -110,7 +110,7 @@ onMounted(() => {
     </header>
     <div class="flex-grow flex flex-col overflow-hidden">
       <div v-if="!showMenu" class="flex-grow p-2 m-4 md:ml-0 bg-gray-900 rounded-lg overflow-auto hide-scrollbar">
-        <RouterView class="h-full overflow-auto hide-scrollbar" />
+        <RouterView class="overflow-auto hide-scrollbar" />
       </div>
       <div v-if="showConsentPopup" class="bg-gray-600 text-white p-2 m-4 mt-0 md:m-0 md:mr-4 md:mb-4 flex flex-col lg:flex-row lg:items-start rounded-lg">
         <span class="p-2 flex-grow"><b class="bg-gray-400 p-1 rounded-lg">Consent to analytics</b> I would like to use javascript to collect analytics. I will only collect data with your express consent. If you do not click "Consent", no data will be collected and your experience will not be affected in any way. If you would like to learn more about what is collected, please see the <a href="https://3kh0.net/privacy" target="_blank" class="underline">privacy page</a>.</span>
