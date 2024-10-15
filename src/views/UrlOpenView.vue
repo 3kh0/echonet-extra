@@ -19,9 +19,9 @@ export default {
 <template>
   <div>
     <h2 class="text-3xl mb-4">URL Opener</h2>
-    <input type="text" id="url-target" placeholder="Enter URL here..." class="rounded-xl w-full py-2 px-3 text-gray-700 leading-tight" @keyup.enter="createPage" />
+    <input type="text" id="url-target" placeholder="Enter URL here..." class="rounded-lg w-full py-2 px-3 text-gray-700 leading-tight" @keyup.enter="createPage" />
     <div class="button-wrapper mt-4">
-      <button id="create" class="bg-blue-500 hover:bg-blue-700 transition-colors py-2 px-4 rounded-xl" @click="createPage">Open page</button>
+      <button id="create" class="bg-blue-500 hover:bg-blue-700 transition-colors py-2 px-4 rounded-lg" @click="createPage">Open page</button>
     </div>
     <div class="tip-section mt-6 bg-gray-800 p-4 rounded-lg" role="note">
       <p>This opens the URL in the current tab, useful for any webview exploits and such. If your school firewall has already blocked the website, this tool alone will not unblock it.</p>

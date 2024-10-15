@@ -19,13 +19,13 @@
         </div>
       </div>
       <div class="flex space-x-4">
-        <button @click="copyAddress(wallet.address)" class="bg-blue-500 transition-colors text-white px-4 py-2 rounded hover:bg-blue-600">
+        <button @click="copyAddress(wallet.address)" class="bg-blue-500 transition-colors text-white px-4 py-2 rounded-lg hover:bg-blue-600">
           <img src="/svg/copy.svg" alt="Copy address" class="w-6 h-6" />
         </button>
-        <button @click="generateQRCode(wallet.address)" class="bg-green-500 transition-colors text-white px-4 py-2 rounded hover:bg-green-600">
+        <button @click="generateQRCode(wallet.address)" class="bg-green-500 transition-colors text-white px-4 py-2 rounded-lg hover:bg-green-600">
           <img src="/svg/qr.svg" alt="Get QR Code" class="w-6 h-6" />
         </button>
-        <button @click="viewOnBlockExplorer(wallet.symbol, wallet.address)" class="bg-yellow-500 transition-colors text-white px-4 py-2 rounded hover:bg-yellow-600">
+        <button @click="viewOnBlockExplorer(wallet.symbol, wallet.address)" class="bg-yellow-500 transition-colors text-white px-4 py-2 rounded-lg hover:bg-yellow-600">
           <p class="flex items-center"><img src="/svg/open.svg" alt="Get QR Code" class="w-6 h-6 mr-2" /> Explorer</p>
         </button>
       </div>

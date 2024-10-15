@@ -7,7 +7,7 @@
         <div class="back flex items-center justify-center bg-gray-500 w-full h-full absolute backface-hidden rounded-full border-4 border-gray-700">Tails</div>
       </div>
     </div>
-    <button @click="flipCoin" class="mt-6 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Flip Coin</button>
+    <button @click="flipCoin" class="mt-6 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg">Flip Coin</button>
     <p v-if="result && !flipping" class="mt-4 text-xl font-bold">{{ resultPretty }}</p>
   </div>
 </template>

@@ -3,41 +3,41 @@
     <div class="w-full md:w-1/2">
       <h2 class="text-3xl mb-4">QR Code Generator</h2>
       <label class="block text-gray-300 text-sm mb-2" for="value">Value:</label>
-      <input id="value" type="text" v-model="value" placeholder="Enter text here..." class="rounded-xl w-full py-2 px-3 text-gray-700 leading-tight mb-2" @keyup="generateQrCode" />
+      <input id="value" type="text" v-model="value" placeholder="Enter text here..." class="rounded-lg w-full py-2 px-3 text-gray-700 leading-tight mb-2" @keyup="generateQrCode" />
       <div class="flex justify-between">
         <div class="w-1/2 pr-2">
           <label class="block text-gray-300 text-sm mb-2" for="size">Size:</label>
-          <input id="size" type="number" v-model="size" placeholder="Size (default: 100)" class="rounded-xl w-full py-2 px-3 text-gray-700 leading-tight mb-2" @keyup="generateQrCode" />
+          <input id="size" type="number" v-model="size" placeholder="Size (default: 100)" class="rounded-lg w-full py-2 px-3 text-gray-700 leading-tight mb-2" @keyup="generateQrCode" />
         </div>
         <div class="w-1/2 pl-2">
           <label class="block text-gray-300 text-sm mb-2" for="margin">Margin:</label>
-          <input id="margin" type="number" v-model="margin" placeholder="Margin (default: 0)" class="rounded-xl w-full py-2 px-3 text-gray-700 leading-tight mb-2" @keyup="generateQrCode" />
+          <input id="margin" type="number" v-model="margin" placeholder="Margin (default: 0)" class="rounded-lg w-full py-2 px-3 text-gray-700 leading-tight mb-2" @keyup="generateQrCode" />
         </div>
       </div>
       <div class="flex justify-between">
         <div class="w-1/2 pr-2">
           <label class="block text-gray-300 text-sm mb-2" for="background">Background Color:</label>
-          <input id="background" type="color" v-model="background" class="rounded-xl w-full py-2 px-3 text-gray-700 leading-tight mb-2" />
+          <input id="background" type="color" v-model="background" class="rounded-lg w-full py-2 px-3 text-gray-700 leading-tight mb-2" />
         </div>
         <div class="w-1/2 pl-2">
           <label class="block text-gray-300 text-sm mb-2" for="foreground">Foreground Color:</label>
-          <input id="foreground" type="color" v-model="foreground" class="rounded-xl w-full py-2 px-3 text-gray-700 leading-tight mb-2" />
+          <input id="foreground" type="color" v-model="foreground" class="rounded-lg w-full py-2 px-3 text-gray-700 leading-tight mb-2" />
         </div>
       </div>
       <label class="block text-gray-300 text-sm mb-2">Render:</label>
       <div class="flex justify-between space-x-4 mb-2">
-        <button :class="`flex-1 rounded-xl py-2 px-4 ${renderAs === 'svg' ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'}`" @click="setRenderAs('svg')">Render as SVG</button>
-        <button :class="`flex-1 rounded-xl py-2 px-4 ${renderAs === 'canvas' ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'}`" @click="setRenderAs('canvas')">Render with Canvas</button>
+        <button :class="`flex-1 rounded-lg py-2 px-4 ${renderAs === 'svg' ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'}`" @click="setRenderAs('svg')">Render as SVG</button>
+        <button :class="`flex-1 rounded-lg py-2 px-4 ${renderAs === 'canvas' ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'}`" @click="setRenderAs('canvas')">Render with Canvas</button>
       </div>
       <label class="block text-gray-300 text-sm mb-2" for="level">Error Correction Level:</label>
-      <select id="level" v-model="level" class="rounded-xl w-full py-2 px-3 text-gray-700 leading-tight mb-2">
+      <select id="level" v-model="level" class="rounded-lg w-full py-2 px-3 text-gray-700 leading-tight mb-2">
         <option value="L">Level L (Low)</option>
         <option value="M">Level M (Medium)</option>
         <option value="Q">Level Q (Quartile)</option>
         <option value="H">Level H (High)</option>
       </select>
       <div class="button-wrapper mt-4">
-        <button class="bg-blue-500 hover:bg-blue-700 transition-colors py-2 px-4 rounded-xl" @click="generateQrCode">Generate QR Code</button>
+        <button class="bg-blue-500 hover:bg-blue-700 transition-colors py-2 px-4 rounded-lg" @click="generateQrCode">Generate QR Code</button>
       </div>
       <div class="tip-section mt-6 bg-gray-800 p-4 rounded-lg" role="note">
         <p class="py-2">You can use this tool to generate QR codes for URLs, text, or any other data you want to encode.</p>

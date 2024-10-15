@@ -2,18 +2,18 @@
   <main class="flex flex-col items-center justify-center min-h-screen">
     <h1 class="text-4xl mb-4">Countdown Timer</h1>
     <div v-if="!timerStarted" class="flex space-x-2 mb-4">
-      <input v-model="hours" type="number" placeholder="HH" class="w-16 p-2 border-0 rounded-xl text-white bg-gray-800 text-2xl no-arrows" />
+      <input v-model="hours" type="number" placeholder="HH" class="w-16 p-2 border-0 rounded-lg text-white bg-gray-800 text-2xl no-arrows" />
       <span class="text-4xl">:</span>
-      <input v-model="minutes" type="number" placeholder="MM" class="w-16 p-2 border-0 rounded-xl text-white bg-gray-800 text-2xl no-arrows" />
+      <input v-model="minutes" type="number" placeholder="MM" class="w-16 p-2 border-0 rounded-lg text-white bg-gray-800 text-2xl no-arrows" />
       <span class="text-4xl">:</span>
-      <input v-model="seconds" type="number" placeholder="SS" class="w-16 p-2 border-0 rounded-xl text-white bg-gray-800 text-2xl no-arrows" />
+      <input v-model="seconds" type="number" placeholder="SS" class="w-16 p-2 border-0 rounded-lg text-white bg-gray-800 text-2xl no-arrows" />
     </div>
     <div v-else class="text-6xl font-mono">
       {{ formattedTime }}
     </div>
     <div class="flex space-x-4 mt-4">
-      <button @click="startTimer" class="px-4 py-2 bg-blue-500 hover:bg-blue-600 transition-colors text-white rounded-xl">Start</button>
-      <button @click="resetTimer" class="px-4 py-2 bg-red-500 hover:bg-red-600 transition-colors text-white rounded-xl">Reset</button>
+      <button @click="startTimer" class="px-4 py-2 bg-blue-500 hover:bg-blue-600 transition-colors text-white rounded-lg">Start</button>
+      <button @click="resetTimer" class="px-4 py-2 bg-red-500 hover:bg-red-600 transition-colors text-white rounded-lg">Reset</button>
     </div>
   </main>
 </template>

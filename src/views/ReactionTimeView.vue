@@ -15,7 +15,7 @@
       </button>
     </div>
     <button
-      :class="['w-full h-full rounded-xl pointer', boxColor]"
+      :class="['w-full h-full rounded-lg pointer', boxColor]"
       @click="handleClick"
     >
       <h1 class="text-white text-4xl font-bold text-center pt-16">
