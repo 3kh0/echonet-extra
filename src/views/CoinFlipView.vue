@@ -20,41 +20,32 @@ export default {
       result: "",
       resultPretty: "",
       coinTransform: "rotateY(0deg)",
-      currentSide: "heads", // Track the current side of the coin
-      resetTransition: false // Flag to disable transition
+      currentSide: "heads",
+      resetTransition: false
     };
   },
   methods: {
     flipCoin() {
       if (this.flipping) return;
 
-      this.flipping = true; // Start flipping animation
-
-      // Determine the result
+      this.flipping = true;
       const isHeads = Math.random() > 0.5;
       this.result = isHeads ? "heads" : "tails";
       console.log(this.result);
 
-      // Calculate the rotation needed to ensure the correct side is displayed
       const rotation = isHeads ? 1440 : 1620;
       this.coinTransform = `rotateY(${rotation}deg)`;
-
-      // End flipping animation after 1 second
       setTimeout(() => {
-        // Disable transition for instant reset
         this.resetTransition = true;
 
-        // Reset the coin to its default state based on the result
         this.coinTransform = isHeads ? "rotateY(0deg)" : "rotateY(180deg)";
 
-        // Re-enable transition after resetting
         setTimeout(() => {
           this.resetTransition = false;
           this.currentSide = this.result;
           this.flipping = false;
-        }, 50); // Small delay to ensure the reset transform is applied
-      }, 1000); // 1 second for full flip animation
-      // Update the resultPretty value for display
+        }, 50);
+      }, 1000);
       this.resultPretty = isHeads ? "The coin landed on Heads!" : "The coin landed on Tails!";
     }
   }

@@ -9,7 +9,7 @@ import { createHtmlPlugin } from "vite-plugin-html";
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
-    sourcemap: true
+    sourcemap: false
   },
   plugins: [vue(), vueDevTools(), createHtmlPlugin()],
   resolve: {
