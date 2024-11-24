@@ -112,7 +112,12 @@ onMounted(() => {
     </header>
     <div class="flex-grow flex flex-col overflow-hidden">
       <div v-if="!showMenu" class="flex-grow p-2 m-4 md:ml-0 bg-gray-900 rounded-lg overflow-auto hide-scrollbar">
-        <RouterView class="overflow-auto hide-scrollbar" />
+        <!--<RouterView class="overflow-auto hide-scrollbar" />-->
+        <router-view v-slot="{ Component }">
+          <transition name="slide" mode="out-in">
+            <component :is="Component" :key="$route.path"></component>
+          </transition>
+        </router-view>
       </div>
       <div v-if="showConsentPopup" class="bg-gray-600 text-white p-2 m-4 mt-0 md:m-0 md:mr-4 md:mb-4 flex flex-col lg:flex-row lg:items-start rounded-lg">
         <span class="p-2 flex-grow"><b class="bg-gray-400 p-1 rounded-lg">Consent to analytics</b> I would like to use javascript to collect analytics. I will only collect data with your express consent. If you do not click "Consent", no data will be collected and your experience will not be affected in any way. If you would like to learn more about what is collected, please see the <a href="https://3kh0.net/privacy" target="_blank" class="underline">privacy page</a>.</span>
@@ -138,5 +143,14 @@ onMounted(() => {
 .hide-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.slide-enter-active, .slide-leave-active {
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.slide-enter-from, .slide-leave-to {
+  opacity: 0;
+  transform: translateX(-100%);
 }
 </style>
