@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center justify-center h-full p-4">
+  <main class="flex flex-col items-center justify-center h-full p-4">
     <div class="flex space-x-4 mb-4 w-full">
       <button
       @click="setMode('Reactive')"
@@ -25,7 +25,7 @@
         {{ pboxMessage }}
       </p>
     </button>
-  </div>
+  </main>
 </template>
 
 <script>

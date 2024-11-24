@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center justify-center">
+  <main class="flex flex-col items-center justify-center h-full p-4">
     <h2 class="text-3xl font-bold mb-8">Pomodoro Timer</h2>
     <p class="text-8xl font-mono mb-8">{{ minutes }}:{{ seconds < 10 ? "0" + seconds : seconds }}</p>
     <p class="text-2xl font-bold mb-8">{{ timerType }}</p>
@@ -8,7 +8,7 @@
       <button class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-700 transition-colors" @click="resetTimer">Reset</button>
       <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-700 transition-colors" @click="skipTimer">Skip</button>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>

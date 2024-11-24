@@ -1,5 +1,5 @@
 <template>
-  <main class="flex flex-col items-center justify-center min-h-screen">
+  <main class="flex flex-col items-center justify-center h-full p-4">
     <h1 class="text-4xl mb-4">Countdown Timer</h1>
     <div v-if="!timerStarted" class="flex space-x-2 mb-4">
       <input v-model="hours" type="number" placeholder="HH" class="w-16 p-2 border-0 rounded-lg text-white bg-gray-800 text-2xl no-arrows" />

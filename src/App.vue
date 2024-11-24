@@ -20,6 +20,7 @@ const routes = ref([
   { name: "Coin flip", path: "/coinflip" },
   { name: "Countdown Timer", path: "/timer" },
   { name: "Reaction Time test", path: "/reactiontime" },
+  { name: "Current Time", path: "/currenttime"}
 ]);
 
 routes.value.sort((a, b) => a.name.localeCompare(b.name));
@@ -102,7 +103,7 @@ onMounted(() => {
           </div>
           <hr class="my-4" />
           <div v-for="tool in nonMatchingTools" :key="tool.path">
-            <RouterLink :to="tool.path" class="block w-full mb-2 bg-gray-800 text-gray-500 rounded-lg p-2 hover:bg-gray-500 transition-colors" @click="showMenu = false">{{ tool.name }}</RouterLink>
+            <RouterLink :to="tool.path" class="block w-full mb-2 bg-gray-800 text-gray-500 rounded-lg p-2 hover:bg-gray-600 transition-colors" @click="showMenu = false">{{ tool.name }}</RouterLink>
           </div>
         </nav>
         <h1 class="font-bold mb-2">Made with <img class="h-5 w-5 inline" alt="green heart" src="/svg/greenheart.svg" /> by Echo</h1>

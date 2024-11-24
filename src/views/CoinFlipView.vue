@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center justify-center">
+  <main class="flex flex-col items-center justify-center h-full p-4">
     <h1 class="text-3xl font-bold mb-4">Coin Flip</h1>
     <div class="coin-container relative w-40 h-40 mb-6">
       <div :class="['coin', flipping ? 'flipping' : '', resetTransition ? 'no-transition' : '']" :style="{ transform: coinTransform }" class="absolute inset-0">
@@ -7,9 +7,9 @@
         <div class="back flex items-center justify-center bg-gray-500 w-full h-full absolute backface-hidden rounded-full border-4 border-gray-700">Tails</div>
       </div>
     </div>
-    <button @click="flipCoin" class="mt-6 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg">Flip Coin</button>
+    <button @click="flipCoin" class="mt-6 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-lg">Flip Coin</button>
     <p v-if="result && !flipping" class="mt-4 text-xl font-bold">{{ resultPretty }}</p>
-  </div>
+  </main>
 </template>
 
 <script>

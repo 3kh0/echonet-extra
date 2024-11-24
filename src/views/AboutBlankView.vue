@@ -26,7 +26,7 @@ export default {
 </script>
 
 <template>
-  <div>
+  <main>
     <h2 class="text-3xl mb-4">About Blank embedder</h2>
     <input type="text" id="url-target" placeholder="Enter URL here..." class="rounded-lg w-full py-2 px-3 text-gray-700 leading-tight" @keyup.enter="createPage" />
     <div class="button-wrapper mt-4">
@@ -37,5 +37,5 @@ export default {
       <p>Info: For extra security, put this page in the embedder so extensions can not see you using this tool. This tool does not always unblock pages, it just makes it so extensions can not interfere with them. Some pages will not work due to Content Security Policies, <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-src" class="text-white underline">Learn more here</a>.</p>
       <p></p>
     </div>
-  </div>
+  </main>
 </template>

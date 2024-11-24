@@ -1,5 +1,5 @@
 <template>
-  <main class="flex flex-col items-center justify-center">
+  <main class="flex flex-col items-center justify-center h-full p-4">
     <h1 class="text-3xl font-bold mb-4 text-white">404 Error</h1>
     <div class="text-center">
       <p class="text-white">We can not find that page you are looking for, most likely it was either moved or taken down.</p>

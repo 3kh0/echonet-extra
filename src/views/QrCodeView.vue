@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-wrap">
+  <main class="flex flex-wrap">
     <div class="w-full md:w-1/2">
       <h2 class="text-3xl mb-4">QR Code Generator</h2>
       <label class="block text-gray-300 text-sm mb-2" for="value">Value:</label>
@@ -50,7 +50,7 @@
         <qrcode-vue :value="qrCode" :size="size" :render-as="renderAs" :margin="margin" :level="level" :background="background" :foreground="foreground" class="max-w-full" />
       </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>

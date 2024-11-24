@@ -36,7 +36,7 @@ fetch("https://wtfismyip.com/json")
 </script>
 
 <template>
-  <div>
+  <main>
     <h2 class="text-3xl mb-4">Browser Information</h2>
     <div id="ip-info" class="bg-gray-800 p-6 rounded-lg shadow-md relative">
       <p id="ipAddr" class="text-3xl mb-2 font-semibold">Fetching data...</p>
@@ -46,7 +46,7 @@ fetch("https://wtfismyip.com/json")
       <p class="text-sm">Use a VPN to protect your privacy online. I recommend <a href="https://mullvad.net/en/vpn" class="font-semibold text-blue-500" target="_blank">Mullvad VPN</a>, it is secure, private, and you don't even use a email to sign up. Pay a flat rate of 5€ per month.</p>
       <div id="progress-bar" class="h-1 bg-blue-500 absolute bottom-0 left-0 rounded-lg"></div>
     </div>
-  </div>
+  </main>
 </template>
 
 <style scoped>
