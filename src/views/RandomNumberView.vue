@@ -5,11 +5,11 @@
       <div class="flex space-x-4 mb-4">
         <div class="w-1/2">
           <label for="min" class="block text-sm font-bold mb-2">Minimum:</label>
-          <input v-model.number="min" type="number" id="min" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+          <input v-model.number="min" type="number" id="min" class="rounded-lg w-full py-2 px-3 text-white leading-tight border-0 bg-gray-800" />
         </div>
         <div class="w-1/2">
           <label for="max" class="block text-sm font-bold mb-2">Maximum:</label>
-          <input v-model.number="max" type="number" id="max" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+          <input v-model.number="max" type="number" id="max" class="rounded-lg w-full py-2 px-3 text-white leading-tight border-0 bg-gray-800" />
         </div>
       </div>
       <div class="mb-4">
@@ -37,3 +37,13 @@ const generateRandomNumber = () => {
   randomNumber.value = Math.floor(Math.random() * (max.value - min.value + 1)) + min.value;
 };
 </script>
+
+<style scoped>
+textarea {
+  resize: none;
+}
+textarea:focus,
+input:focus {
+  outline: none;
+}
+</style>

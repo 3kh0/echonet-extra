@@ -96,7 +96,7 @@ onMounted(() => {
     <header :class="{ 'hidden md:flex': !showMenu, 'flex-grow md:hidden md:w-64': showMenu }" class="flex-col items-center md:w-[230px] min-w-[230px] p-2 m-4 bg-gray-900 rounded-lg overflow-y-auto hide-scrollbar">
       <div class="wrapper text-center w-full">
         <h1 class="text-2xl font-bold mb-2">Echo net extras</h1>
-        <input ref="searchBox" type="text" v-model="searchTerm" autofocus placeholder="Search tools... CTRL+K" class="w-full p-2 rounded-lg text-black" />
+        <input ref="searchBox" type="text" v-model="searchTerm" autofocus placeholder="Search tools... CTRL+K" class="w-full p-2 rounded-lg text-white bg-gray-800" />
         <nav class="mt-2 w-full">
           <div v-if="matchingTools.length === 0" class="text-center text-red-500">Your query did not match any results! :(</div>
           <div v-for="tool in matchingTools" :key="tool.path">

@@ -5,7 +5,7 @@
       <div class="flex space-x-4 mb-4">
         <div class="w-1/2">
           <label for="length" class="block text-sm font-bold mb-2">Length:</label>
-          <input v-model.number="length" type="number" id="length" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+          <input v-model.number="length" type="number" id="length" class="rounded-lg w-full py-2 px-3 text-white leading-tight border-0 bg-gray-800" />
         </div>
       </div>
       <div class="mb-4">
@@ -86,3 +86,13 @@ const copyPassword = () => {
   navigator.clipboard.writeText(password.value);
 };
 </script>
+
+<style scoped>
+textarea {
+  resize: none;
+}
+textarea:focus,
+input:focus {
+  outline: none;
+}
+</style>

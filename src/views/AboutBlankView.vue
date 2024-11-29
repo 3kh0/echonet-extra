@@ -28,7 +28,7 @@ export default {
 <template>
   <main>
     <h2 class="text-3xl mb-4">About Blank embedder</h2>
-    <input type="text" id="url-target" placeholder="Enter URL here..." class="rounded-lg w-full py-2 px-3 text-gray-700 leading-tight" @keyup.enter="createPage" />
+    <input type="text" id="url-target" placeholder="Enter URL here..." class="rounded-lg w-full py-2 px-3 text-white leading-tight border-0 bg-gray-800 resize-none" @keyup.enter="createPage" />
     <div class="button-wrapper mt-4">
       <button id="create" class="bg-blue-500 hover:bg-blue-700 transition-colors py-2 px-4 rounded-lg" @click="createPage">Create page</button>
       <button class="bg-red-500 hover:bg-red-700 transition-colors py-2 px-4 rounded-lg ml-4" @click="document.getElementById('url-target').value = ''">Clear input</button>
@@ -39,3 +39,13 @@ export default {
     </div>
   </main>
 </template>
+
+<style scoped>
+textarea {
+  resize: none;
+}
+textarea:focus,
+input:focus {
+  outline: none;
+}
+</style>
