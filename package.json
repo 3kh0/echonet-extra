@@ -1,0 +1,30 @@
+{
+  "name": "echonet-extra",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "format": "prettier --write ./"
+  },
+  "dependencies": {
+    "qrcode.vue": "^3.6.0",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0",
+    "vue-screen": "^2.4.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "prettier": "^3.4.2",
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.0.4",
+    "vite-plugin-html": "^3.2.2",
+    "vite-plugin-vue-devtools": "^7.6.8"
+  },
+  "packageManager": "pnpm@9.11.0+sha512.0a203ffaed5a3f63242cd064c8fb5892366c103e328079318f78062f24ea8c9d50bc6a47aa3567cabefd824d170e78fa2745ed1f16b132e16436146b7688f19b"
+}
